@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="it" class="h-100">
+	<head>
+		<meta charset="UTF-8">
+		<title th:text="'Benvenuto'"></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container" th:style="'display:flex; align-items: center; flex-flow: column;'">
+			<h1 class="mt-5 mx-5">Labtv</h1>
+				<div class="list-container" th:style="'margin-top: 8%;'">
+				<form action="/title-search" method="get">
+					<label for="title">Ricerca per titolo:</label>
+					<input type="text" id="title" name="title" required>
+					<button type="submit">Cerca</button>
+				</form>
+	
+				<ul th:style="'list-style: none; text-align: center; margin-top:10%'">
+					<li>
+						<a th:style="'text-decoration: none;'" th:href="@{'/evidenza'}"><h2>Lista Film in Evidenza</h2></a>
+					</li>
+					<li>
+						<a th:style="'text-decoration: none;'" th:href="@{'/film'}"><h2>Lista Film</h2></a>
+					</li>	
+					<li>
+						<a th:style="'text-decoration: none;'" th:href="@{'/director'}"><h2>Lista Registi</h2></a>
+					</li>
+					<li>
+						<a th:style="'text-decoration: none;'" th:href="@{'/similar'}"><h2>Lista Film Simili</h2></a>
+					</li>
+					<li>
+						<a th:style="'text-decoration: none;'" th:href="@{'/genre'}"><h2>Lista Generi</h2></a>
+					</li>
+					<li>
+						<a th:style="'text-decoration: none;'" th:href="@{'/star'}"><h2>Lista Attori</h2></a>
+					</li>
+					<li>
+						<a th:style="'text-decoration: none;'" th:href="@{'/trailer'}"><h2>Lista Trailers</h2></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>

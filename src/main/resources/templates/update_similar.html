@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="it" class="h-100">
+	<head>
+		<meta charset="UTF-8">
+		<title th:text="'Modifica Similar'"></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<h3>Modifica Similar</h3>
+		<div class="container">
+		
+			<div class="updateDirectorBox pt-4 pb-2">
+				<h5 class="pb-2">Correggi i campi per aggiornare il Film!</h3>
+			 	<form class="form" method="POST" th:action="@{'/similar/updated/' + ${similar.id}}"> 
+            
+		            <div class="row">
+		                <div class="col-8">
+		                    <label for="title" th:text="'Titolo:'"></label>
+		                    <input type="text" id="title" th:field="*{similar.title}" class="form-control" required="required">
+		                </div>
+		            </div>
+            
+		            <div class="row">
+		                <div class="col-8 mt-3">
+		                    <label for="image" th:text="'Locandina:'"></label>
+		                    <input type="text" id="image" th:field="*{similar.image}" class="form-control" required="required">
+		                </div>
+		            </div>
+            
+		            <div class="row">
+		                <div class="col-8 mt-3">
+		                    <label for="plot" th:text="'Trama:'"></label>
+		                    <input type="text" id="plot" th:field="*{similar.plot}" class="form-control" required="required">
+		                </div>
+		            </div>
+			
+		            <div class="col-12 mt-3">
+		                <input type="submit" class="btn btn-primary large-button me-2" th:value="'AGGIORNA'">
+		            </div>
+        		</form>
+			</div>	
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>
